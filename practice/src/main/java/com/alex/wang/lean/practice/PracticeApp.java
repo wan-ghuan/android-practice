@@ -1,4 +1,13 @@
 package com.alex.wang.lean.practice;
 
-class PracticeApp extends Application {
+import android.app.Application;
+
+public class PracticeApp extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
+
+
 }

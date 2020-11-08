@@ -13,23 +13,39 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.alex.wang.lean.practice.R;
+import com.google.zxing.Result;
+
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class SlideshowFragment extends Fragment {
 
     private SlideshowViewModel slideshowViewModel;
+    private ZXingScannerView mScannerView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        mScannerView = new ZXingScannerView(this.getActivity());
+
+        return mScannerView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mScannerView.setResultHandler(new ZXingScannerView.ResultHandler() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void handleResult(Result rawResult) {
+
             }
         });
-        return root;
+
+        mScannerView.startCamera();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        mScannerView.stopCamera();
     }
 }

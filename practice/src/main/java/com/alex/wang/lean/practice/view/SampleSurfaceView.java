@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -31,7 +32,15 @@ public class SampleSurfaceView extends SurfaceView {
     private DrawTask mDrawTask;
 
     public SampleSurfaceView(Context context) {
-        super(context);
+        this(context, null);
+    }
+
+    public SampleSurfaceView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public SampleSurfaceView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
         mDrawTask = new DrawTask(getHolder());
         getHolder().addCallback(mHolderCallback);
     }
