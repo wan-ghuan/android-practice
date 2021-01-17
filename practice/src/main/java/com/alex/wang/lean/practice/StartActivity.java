@@ -1,11 +1,9 @@
 package com.alex.wang.lean.practice;
 
 import android.os.Bundle;
-import android.view.Menu;
 
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.databinding.DataBindingUtil;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -35,12 +33,6 @@ public class StartActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.start, menu);
-        return true;
     }
 
     @Override
