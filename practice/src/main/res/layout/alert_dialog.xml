@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dp_274"
+    android:layout_height="@dimen/dp_204"
+    android:paddingTop="@dimen/dp_32"
+    android:paddingBottom="@dimen/dp_31"
+    android:background="@drawable/bg_alert_dialog">
+
+    <ImageView
+        android:id="@+id/alert_icon"
+        android:layout_width="@dimen/dp_72"
+        android:layout_height="@dimen/dp_72"
+        android:layout_marginStart="@dimen/dp_101"
+        android:layout_marginEnd="@dimen/dp_101"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/alert_text"
+        android:layout_width="@dimen/dp_208"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:textSize="@dimen/sp_20"
+        android:textColor="@color/color_001334"
+        android:maxLines="2"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="@dimen/dp_19"
+        android:layout_marginStart="@dimen/dp_33"
+        android:layout_marginEnd="@dimen/dp_33"
+        app:layout_constraintTop_toBottomOf="@id/alert_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
